@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nrwl-practice/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@nrwl-practice/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@nrwl-practice/stores/detail": ["libs/stores/detail/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

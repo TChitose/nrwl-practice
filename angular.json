@@ -1,7 +1,8 @@
 {
   "version": 1,
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "defaultProject": "angular-web",
   "schematics": {
@@ -51,7 +52,9 @@
               "apps/angular-web/src/favicon.ico",
               "apps/angular-web/src/assets"
             ],
-            "styles": ["apps/angular-web/src/styles.scss"],
+            "styles": [
+              "apps/angular-web/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -113,7 +116,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-web"],
+          "outputs": [
+            "coverage/apps/angular-web"
+          ],
           "options": {
             "jestConfig": "apps/angular-web/jest.config.js",
             "passWithNoTests": true
@@ -142,7 +147,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/angular-web-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-web-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -155,12 +162,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -185,12 +196,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api"],
+          "outputs": [
+            "coverage/apps/api"
+          ],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -206,7 +221,36 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/api-interfaces/**/*.ts"
+            ]
+          }
+        }
+      }
+    },
+    "stores-detail": {
+      "projectType": "library",
+      "root": "libs/stores/detail",
+      "sourceRoot": "libs/stores/detail/src",
+      "prefix": "nrwl-practice",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/stores/detail/src/**/*.ts",
+              "libs/stores/detail/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/stores/detail"
+          ],
+          "options": {
+            "jestConfig": "libs/stores/detail/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
