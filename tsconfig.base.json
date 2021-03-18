@@ -16,7 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@nrwl-practice/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@nrwl-practice/stores/detail": ["libs/stores/detail/src/index.ts"]
+      "@nrwl-practice/stores/detail": ["libs/stores/detail/src/index.ts"],
+      "@nrwl-practice/model": ["libs/model/src/index.ts"],
+      "@nrwl-practice/backend": ["libs/backend/src/index.ts"],
+      "@nrwl-practice/guard": ["libs/guard/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

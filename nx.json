@@ -20,6 +20,9 @@
     "angular-web-e2e": { "tags": [], "implicitDependencies": ["angular-web"] },
     "api": { "tags": [] },
     "api-interfaces": { "tags": [] },
-    "stores-detail": { "tags": [] }
+    "stores-detail": { "tags": [] },
+    "model": { "tags": [] },
+    "backend": { "tags": [] },
+    "guard": { "tags": [] }
   }
 }

@@ -52,9 +52,7 @@
               "apps/angular-web/src/favicon.ico",
               "apps/angular-web/src/assets"
             ],
-            "styles": [
-              "apps/angular-web/src/styles.scss"
-            ],
+            "styles": ["apps/angular-web/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -116,9 +114,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/angular-web"
-          ],
+          "outputs": ["coverage/apps/angular-web"],
           "options": {
             "jestConfig": "apps/angular-web/jest.config.js",
             "passWithNoTests": true
@@ -147,9 +143,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/angular-web-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/angular-web-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -162,16 +156,12 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -196,16 +186,12 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/api/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/api"
-          ],
+          "outputs": ["coverage/apps/api"],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -221,9 +207,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/api-interfaces/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
           }
         }
       }
@@ -245,11 +229,80 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/stores/detail"
-          ],
+          "outputs": ["coverage/libs/stores/detail"],
           "options": {
             "jestConfig": "libs/stores/detail/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "model": {
+      "root": "libs/model",
+      "sourceRoot": "libs/model/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/model/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/model"],
+          "options": {
+            "jestConfig": "libs/model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "backend": {
+      "projectType": "library",
+      "root": "libs/backend",
+      "sourceRoot": "libs/backend/src",
+      "prefix": "nrwl-practice",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/backend/src/**/*.ts",
+              "libs/backend/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/backend"],
+          "options": {
+            "jestConfig": "libs/backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "guard": {
+      "projectType": "library",
+      "root": "libs/guard",
+      "sourceRoot": "libs/guard/src",
+      "prefix": "nrwl-practice",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/guard/src/**/*.ts",
+              "libs/guard/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/guard"],
+          "options": {
+            "jestConfig": "libs/guard/jest.config.js",
             "passWithNoTests": true
           }
         }

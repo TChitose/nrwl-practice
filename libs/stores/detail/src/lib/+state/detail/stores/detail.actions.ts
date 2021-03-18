@@ -1,14 +1,7 @@
 import { createAction, props } from '@ngrx/store';
-import { StoresdetailEntity } from './detail.models';
+import { Color } from '@nrwl-practice/model';
 
-export const init = createAction('[Storesdetail Page] Init');
-
-export const loadStoresdetailSuccess = createAction(
-  '[Storesdetail/API] Load Storesdetail Success',
-  props<{ storesdetail: StoresdetailEntity[] }>()
-);
-
-export const loadStoresdetailFailure = createAction(
-  '[Storesdetail/API] Load Storesdetail Failure',
-  props<{ error: any }>()
+export const setColor = createAction(
+  '[detail] Set Color',
+  props<{ color: Color }>()
 );

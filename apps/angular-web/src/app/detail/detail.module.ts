@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { DetailRoutingModule } from './detail-routing.module';
 import { DetailComponent } from './detail.component';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 
 @NgModule({
   declarations: [DetailComponent],
   imports: [
     CommonModule,
-    DetailRoutingModule
+    DetailRoutingModule,
+    ReactiveComponentModule
   ]
 })
 export class DetailModule { }

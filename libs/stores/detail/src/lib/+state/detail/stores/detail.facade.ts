@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { select, Store, Action } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 
 import * as StoresdetailActions from './detail.actions';
-import * as StoresdetailFeature from './detail.reducer';
 import * as StoresdetailSelectors from './detail.selectors';
+import { Color } from '@nrwl-practice/model';
 
 @Injectable()
 export class StoresdetailFacade {
@@ -12,14 +12,8 @@ export class StoresdetailFacade {
    * Combine pieces of state using createSelector,
    * and expose them as observables through the facade.
    */
-  loaded$ = this.store.pipe(
-    select(StoresdetailSelectors.getStoresdetailLoaded)
-  );
-  allStoresdetail$ = this.store.pipe(
-    select(StoresdetailSelectors.getAllStoresdetail)
-  );
-  selectedStoresdetail$ = this.store.pipe(
-    select(StoresdetailSelectors.getSelected)
+  color$ = this.store.pipe(
+    select(StoresdetailSelectors.getColor)
   );
 
   constructor(private store: Store) {}
@@ -28,7 +22,7 @@ export class StoresdetailFacade {
    * Use the initialization action to perform one
    * or more tasks in your Effects.
    */
-  init() {
-    this.store.dispatch(StoresdetailActions.init());
+  setColor(color: Color) {
+    this.store.dispatch(StoresdetailActions.setColor({color}));
   }
 }

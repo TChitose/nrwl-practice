@@ -1,0 +1,17 @@
+.list{
+  display: flex;
+  flex-wrap : wrap;
+
+  &__box {
+    margin: 20px;
+    min-width: 200px;
+    min-height: 200px;
+    width: 200px;
+    height: 200px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+

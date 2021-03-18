@@ -1,1 +1,6 @@
-<p>list works!</p>
+<div class="list">
+  <ng-container *ngFor="let color of (colorList$ | ngrxPush)">
+    <div [routerLink]="'/detail/' + color.code" class="list__box" (click)="click(color)" [ngStyle]="{'background-color' : '#' + color.code }">
+    </div>
+  </ng-container>
+</div>
